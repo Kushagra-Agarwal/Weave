@@ -1,3 +1,64 @@
-.row {
-    flex-direction: row;
-}
+    #logo {
+        width: 10%;
+        margin-top: 10px;
+        z-index: 1;
+    }
+    
+    .row {
+        text-align: center;
+        flex-direction: row;
+    }
+    
+    .option {
+        display: flex;
+        float: left;
+        flex-wrap: nowrap;
+        text-align: center;
+        width: 50px;
+        margin: 20px;
+    }
+    
+    .nav {
+        width: 50px;
+    }
+    
+    .shift {
+        float: right;
+    }
+    
+    .xyz::before {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        overflow: hidden;
+        content: '';
+        position: absolute;
+        top: 9%;
+        /* bottom: 2px; */
+        height: 2px;
+        width: 750px;
+    }
+    
+    .xyz::after {
+        /* border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        overflow: hidden;
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        height: 2px; */
+        clear: both;
+    }
+    
+    .logo-con {
+        display: inline-block;
+        background-color: yellow;
+        box-sizing: border-box;
+    }
+    /* .opt {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+} */
