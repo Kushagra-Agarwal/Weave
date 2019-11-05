@@ -1,3 +1,60 @@
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+$("#m1").click(function(){
+    if($("#border_win").is(":visible")){
+        $("#borbod").html('<img src="'+$("#m1").attr("src")+'"/>');
+    }
+    if($("#body_win").is(":visible")){
+        $("#bodbod").html('<img src="'+$("#m1").attr("src")+'"/>');
+    }
+    if($("#pallu_win").is(":visible")){
+        $("#palbod").html('<img src="'+$("#m1").attr("src")+'"/>');
+    } 
+});
+$("#m3").click(function(){
+    if($("#border_win").is(":visible")){
+        $("#borbod").html('<img src="'+$("#m3").attr("src")+'"/>');
+    }
+    if($("#body_win").is(":visible")){
+        $("#bodbod").html('<img src="'+$("#m3").attr("src")+'"/>');
+    }
+    if($("#pallu_win").is(":visible")){
+        $("#palbod").html('<img src="'+$("#m3").attr("src")+'"/>');
+    } 
+});
+$("#m2").click(function(){
+    if($("#border_win").is(":visible")){
+        $("#borbod").html('<img src="'+$("#m2").attr("src")+'"/>');
+    }
+    if($("#body_win").is(":visible")){
+        $("#bodbod").html('<img src="'+$("#m2").attr("src")+'"/>');
+    }
+    if($("#pallu_win").is(":visible")){
+        $("#palbod").html('<img src="'+$("#m2").attr("src")+'"/>');
+    } 
+});
 $(document).ready(function () {
     var win = 1;
     $("#col").click(function () {
@@ -33,6 +90,15 @@ $(document).ready(function () {
         $("#pallu_win").show();
         $("#pallu").hide();
         $("#pallumin").show();
+        win = win + 1;
+        }
+    });
+
+    $("#Details").click(function () {
+        if(win<3){
+        $("#Details_win").show();
+        $("#Details").hide();
+        $("#DetailsMin").show();
         win = win + 1;
         }
     });
@@ -76,7 +142,13 @@ $(document).ready(function () {
         win = win - 1;
     }
     });
-
+    $("#DetailsMin").click(function () {
+        if(win>0){ 
+        $("#Details_win").hide();
+        $("#Details").show();
+        win = win - 1;
+    }
+    });
 
 
 
