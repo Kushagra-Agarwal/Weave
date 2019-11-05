@@ -1,0 +1,43 @@
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+
+cap = cv2.imread("../input/download.jpg")
+cap =  cv2.cvtColor(cap, cv2.COLOR_BGR2RGB) #converting image color to original colors in form of RGB
+# removing noise
+kernel = np.ones((5,5),np.float32)/25 # setting kernel parameter(matrix) 
+dst = cv2.filter2D(cap,-1,kernel) # smoothening the image(reducing noise) cv2.filter(image_name, ddepth(-1 for same depth as src), kernel) (Convolution)
+# select a particular object of some specific color
+hsv = cv2.cvtColor(dst, cv2.COLOR_BGR2HSV)
+# define range of blue color in HSV
+lower_blue = np.array([7,170,84])
+upper_blue = np.array([20,255,255])
+# # Threshold the HSV image to get only blue colors
+mask = cv2.inRange(hsv, lower_blue, upper_blue)
+
+kernel1 = np.ones((5,5),np.float32)/25 # setting kernel parameter(matrix) 
+mask1 = cv2.filter2D(mask,-1,kernel1) 
+# image in the threshold
+# Bitwise-AND mask and original image
+res = cv2.bitwise_and(cap,cap, mask= mask) # restoring image with original image
+res1 = cv2.bitwise_and(dst,dst, mask= mask1) # restoring image with noiseless image
+# res2 = cv2.bitwise_and(dst1,dst1, mask= mask)
+# showing different images using subplot
+fig, axs = plt.subplots(1, 6, figsize=(10, 3))
+axs[0].set_title('Original')
+axs[0].imshow(cap)
+axs[1].set_title('Smooth')
+axs[1].imshow(dst)
+axs[2].set_title('HSv')
+axs[2].imshow(hsv)
+axs[3].set_title('mask')
+axs[3].imshow(mask)
+axs[4].set_title('res')
+axs[4].imshow(res)
+# axs[5].set_title('res1')
+# axs[5].imshow(dst1)
+axs[5].set_title('res1')
+axs[5].imshow(res1)
+# axs[7].set_title('res2')
+# axs[7].imshow(res2)
