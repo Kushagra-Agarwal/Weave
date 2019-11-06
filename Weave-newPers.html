@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="Style2.css">
 </head>
+
 <body>
-  
-<!-- File2 -->
+
+    <!-- File2 -->
     <div class="menu-bar">
         <div class="menu">
             File
@@ -33,6 +34,28 @@
         </div>
         <div class="menu">
             Motify
+            <div class="dropdown-content">
+                <a href="#" id="myBtn">Select Motif</a>
+                <a href="#">Undo Selection</a>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <h3>Select Motifs:</h3>
+                <span class="close">&times;</span>
+                <div id="m1">
+                    <img src="images/m1.jpg" alt="motif">
+                    
+                </div>
+                <div id="m2">
+                    <img src="images/m2.jpg" alt="motif">
+                </div>
+                <div id="m3">
+                    <img src="images/m3.png" alt="motif">
+                </div>
+            </div>
+
         </div>
         <div class="menu">
             Publish
@@ -40,10 +63,10 @@
         <div class="menu_extended">
             <a href="">?</a>
         </div>
-    </div>  
+    </div>
 
-  
-<!-- File3 -->
+
+    <!-- File3 -->
     <!-- <div style="width:100%;height:30px;background-color:thistle">
     </div> -->
     <div class="main2">
@@ -113,18 +136,22 @@
         </div>
         <div class="panel2 tog_win" id="border_win">
             <div class="panel2_head">Border Motif</div>
-            <div class="panel2_body"></div>
+            <div class="panel2_body" id="borbod"></div>
         </div>
         <div class="panel2 tog_win" id="pallu_win">
             <div class="panel2_head">Pallu Motif</div>
-            <div class="panel2_body"></div>
+            <div class="panel2_body" id="palbod"></div>
         </div>
         <div class="panel2 tog_win" id="body_win">
             <div class="panel2_head">Body Motif</div>
-            <div class="panel2_body"></div>
+            <div class="panel2_body" id="bodbod"></div>
         </div>
-        <div class="panel3">
-            Box3
+        <div class="panel3 tog_btn" id="Details">
+            Details
+        </div>
+        <div class="panel3 tog_win" id="Details_win">
+            <div class="panel3_head min" id="DetailsMin">Edit Details</div>
+            <div class="panel3_body"></div>
         </div>
         <div class="clr"></div>
     </div>
